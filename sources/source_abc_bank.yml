@@ -3,5 +3,45 @@ sources:
   - name: abc_bank
     database: PORTFOLIO_TRACKING
     schema: SOURCE_DATA
+    description: '{{ doc("source_abc_bank") }}'
     tables:
       - name: ABC_BANK_POSITION
+        description: '{{ doc("source_abc_bank_position") }}'
+        columns:
+          - name: ACCOUNT_ID
+            description: '{{ doc("source_abc_bank_position_accountid") }}'
+            tests:
+              - not_null
+          - name: SYMBOL
+            description: '{{ doc("source_abc_bank_position_symbol") }}'
+            tests:
+              - unique
+              - not_null
+          - name: DESCRIPTION
+            description: '{{ doc("source_abc_bank_position_description") }}'
+            tests:
+              - not_null
+          - name: EXCHANGE
+            description: '{{ doc("source_abc_bank_position_exchange") }}'
+            tests:
+              - not_null
+          - name: REPORT_DATE
+            description: '{{ doc("source_abc_bank_position_report_date") }}'
+            tests:
+              - not_null
+          - name: QUANTITY
+            description: '{{ doc("source_abc_bank_position_quantity") }}'
+            tests:
+              - not_null
+          - name: COST_BASE
+            description: '{{ doc("source_abc_bank_position_cost_base") }}'
+            tests:
+              - not_null
+          - name: POSITION_VALUE
+            description: '{{ doc("source_abc_bank_position_position_value") }}'
+            tests:
+              - not_null
+          - name: CURRENCY
+            description: '{{ doc("source_abc_bank_position_currency") }}'
+            tests:
+              - not_null
